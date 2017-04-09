@@ -1,0 +1,90 @@
+<style> p {
+    color: green;
+}
+
+a {
+    text-decoration: none;
+}
+
+a img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: auto auto;
+}
+
+#google_ac_i {
+    float: left;
+}
+
+#google_ac_i p {
+    float: left;
+    display: inline;
+    margin: 10px 0 0 10px;
+}
+
+#authorize-button {
+    float: left;
+    display: none;
+    margin: 10px;
+}
+
+#signout-button {
+    float: left;
+    display: none;
+    margin: 10px;
+}
+
+#container {
+    float: left;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#nav{
+  padding:10px;
+}
+
+.folder {
+    float: left;
+    width: 20%;
+    height: 150px;
+    padding: 10px
+}
+
+.file {
+    float: left;
+    width: 20%;
+    height:180px;
+    padding: 10px;
+}
+
+#folder_title {
+    color: #69d3f1;
+    font-size: 12pt;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#file_title {
+    color: #69d3f1;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+}
+
+#loading {
+    width: 100%;
+    text-align: center;
+    padding: 10pt;
+}
+
+</style>
