@@ -169,13 +169,17 @@ function createJwplayer(fileId){
     if(resp.downloadUrl != undefined){
       var inst = $('[data-remodal-id=modal]').remodal();
       var videoUrl = resp.downloadUrl.replace('&gd=true','');
+
+      $('#download_url').html('<a href="'+videoUrl+'">Download Link</a>');
+
       $(document).on('closing', '.remodal', function(e) {
           $('#jwplayer').empty();
       });
 
       jwplayer("jwplayer").setup({
         width: "100%",
-        aspectratio: "16:9",
+        primary: 'html5',
+        setFullscreen: true,
           playlist: [{
               sources: [{
                   "file": videoUrl,
@@ -196,75 +200,5 @@ function createJwplayer(fileId){
     }
 });
 
-
-    // var accessToken = gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse().access_token;
-    // var videoUrl = "https://www.googleapis.com/drive/v3/files/"+ fileId + "?alt=media";
-    // var xhr = new XMLHttpRequest();
-    // xhr.open('GET', videoUrl);
-    // xhr.setRequestHeader('Authorization', 'Bearer ' + accessToken);
-    
-    // xhr.onload = function() {
-    //   alert("Loaded.");
-    //   console.log(xhr.responseText);
-    // };
-    
-    // xhr.onerror = function() {
-    //   alert('Error.');
-    // };
-
-    // xhr.send();
-
-
-  // gapi.client.drive.files.get({
-  //       fileId: fileId
-  // }).then(function(response) {
-  //   console.log(response);
-  // });
-
-  //var videoUrl = "https://www.drive.google.com/uc?export=download&confirm=oN25&id=" + id;
-  //var videoUrl = "https://www.googleapis.com/drive/v3/files/"+ id +"?alt=media";
-
-  //$('#jwplayer').append('<form action="'+ videoUrl +'" method="post" target="iframe" id="fromUrl" style="display:none;"></form>');
-  //$('#jwplayer').append('<iframe src="'+videoUrl+'" id="iframe" style="display:none;" />');
-  //$('#fromUrl').submit();
-  // $.ajax({ //my ajax request
-  //           url: videoUrl,
-  //           type: "POST",
-  //           cache: false,
-  //           dataType: "json",
-  //           crossDomain: true,
-  //           success : function(response){
-  //             console.log(response);
-  //           }
-  //   });
-
-// $.ajax({
-//             url: "https://www.drive.google.com/uc",
-//             type: "POST",
-//             crossDomain: true,
-//             data: JSON.stringify({export: "download", confirm : 2, id : id}),
-//             dataType: "json",
-//             success: function (response) {
-//                 var resp = JSON.parse(response)
-//                 alert(resp.status);
-//             },
-//             error: function (xhr, status) {
-//                 alert("error");
-//             }
-//         });
-
-  // $.post("https://www.googleapis.com/drive/v2/files/"+id, function(data) {
-  //     console.log(data);
-  // //     var linkReg = new RegExp('\{.*\}');
-  // //     var links = data.match(linkReg);
-  // //     var link;
-      
-  // //     if(links.length > 0){
-  // //       var json = JSON.parse(links[0]);
-  // //       link = json != undefined ? json.downloadUrl : "";
-  // //     }
-
-  // //     console.log("Link " + link);
-  // });
 }
 

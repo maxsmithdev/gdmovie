@@ -13,6 +13,10 @@ a img {
     margin: auto auto;
 }
 
+#download_url a{
+    margin: 0 auto;
+}
+
 #google_ac_i {
     float: left;
 }
